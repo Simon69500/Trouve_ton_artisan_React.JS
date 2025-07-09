@@ -1,0 +1,77 @@
+@import "Variables.scss";
+
+// Format mobile
+    @media (max-width: 430px) {
+       
+        .search-icon {
+            font-size: 20px; 
+        }
+
+        .burger-menu {
+            margin-left: 0; 
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            background-color: $Background1;
+            padding: 10px 20px;
+            font-family: Graphik, sans-serif;
+            width: 100%;
+            height: 100px;
+            
+            .logo-img {
+                width: 150px;
+                height: auto; 
+            }
+        
+            .search-icon {
+                cursor: pointer;
+                font-size: 24px;
+                margin: 0 20px; 
+            }
+        
+            .burger-menu {
+                display: flex;
+                align-items: center;
+        
+                width: 50px;
+            }
+    }
+}
+
+//Format Desktop
+@media (min-width: 768px) {
+
+    #header {
+        display: flex;
+        align-items: center; 
+        background-color: $Background1;
+        font-family: Graphik, sans-serif;
+
+    
+        .logo-img {
+            width: 150px;
+            height: auto;
+            padding-left: 50px;
+        }
+    
+        .search-icon {
+            display: flex;
+            justify-content: end;
+            align-items: flex-end;
+
+            width: 500px;
+            margin-left: 500px;
+            color:$bleuMarine;
+            cursor: pointer;
+            font-size: 30px; 
+            
+        }
+    
+        .burger-menu {
+            width: 700px;
+        }
+}
+}
