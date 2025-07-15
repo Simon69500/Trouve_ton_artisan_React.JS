@@ -1,0 +1,44 @@
+@import "../variables.scss";
+
+.tuto {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .title_principal {
+        color: $bleuMarine;
+        text-align: center;
+        font-weight: 700;
+        font-size: xx-large;
+    }
+
+    .etape {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        .bi {
+            color: $bleu;
+        }
+
+        .text_tuto {
+            border: 1px solid #0074c7;
+            border-radius: 30px;
+            font-size: large;
+            text-align: center;
+            background-color: $bleuMarine;
+            color: $blanc;
+
+        }
+    }
+}
+
+.top_artisan {
+        .title_secondary {
+        color: $bleuMarine;
+        text-align: center;
+        font-weight: 600;
+        font-size: x-large;
+    }
+}
