@@ -2,7 +2,7 @@ import { Navbar, Nav, Container, Form, FormControl } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Logo from '../assets/logo/Logo.png';
-import '../styles/SCSS/header.scss';
+import '../styles/SCSS/components/header.scss';
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState('');
