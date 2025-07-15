@@ -2,14 +2,17 @@ import './App.css';
 import Footer from './components/footer';
 import Header from "./components/header";
 
-import { BrowserRouter } from "react-router-dom";
+import { Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Footer/>
-    </BrowserRouter>
+    <div>
+    <Routes>
+      <Route path='/' element={<Home/>}>Accueil</Route>
+    </Routes>
+    <Header />
+    <Footer/>
+    </div>
   );
 }
 
