@@ -3,7 +3,10 @@ import './App.css';
 
 import Footer from './components/footer';
 import Header from "./components/header";
+import ArtisanCard from './pages/ArtisanCard';
+import ArtisanFiche from './pages/ArtisanFiche';
 import Home from './pages/Home';
+import Error from './pages/Error';
 
 import { Route, Routes} from 'react-router-dom';
 
@@ -13,6 +16,9 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/' element={<Home/>}>Accueil</Route>
+      <Route path='/artisans' element={<ArtisanCard/>}>Artisans</Route>
+      <Route path='/artisansFiche' element={<ArtisanFiche/>}>Liste des Artisans</Route>
+      <Route path='/erreur' element={<Error/>}>Erreur 404</Route>
     </Routes>
     <Footer/>
     </div>
