@@ -3,10 +3,10 @@
 -- insertion des Categories dans le tableau Categorie
 INSERT INTO Categorie (nom)
 VALUES
-(Alimentation),
-(Bâtiment),
-(Fabrication),
-(Services);
+('Alimentation'),
+('Bâtiment'),
+('Fabrication'),
+('Services');
 
 
 -- insertion des Artisans
@@ -21,9 +21,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'boucherie.dumond@gmail.com',
     NULL,
-    0,
+    FALSE,
     1
-);
+),
 
 (
     'Au pain chaud',
@@ -33,9 +33,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'aupainchaud@hotmail.com',
     NULL,
-    1,
+    TRUE,
     1
-);
+),
 
 (
     'Chocolaterie Labbé',
@@ -45,9 +45,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'chocolaterie-labbe@gmail.com',
     'https://chocolaterie-labbe.fr',
-    1,
+    TRUE,
     1
-);
+),
 
 (
     'Traiteur Truchon',
@@ -57,21 +57,21 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'contact@truchon-traiteur.fr',
     'https://truchon-traiteur.fr',
-    0,
+    FALSE,
     1
-);
+),
 
 (
     'Orville Salmons',
     'Chauffagiste',
-    5.0
+    5.0,
     'Evian',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'o-salmons@live.com',
     NULL,
-    1,
+    TRUE,
     2
-)
+),
 
 (
     'Mont Blanc Eléctricité',
@@ -81,9 +81,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'contact@mont-blanc-electricite.com',
     'https://mont-blanc-electricite.com',
-    0,
+    FALSE,
     2
-);
+),
 
 (
     'Boutot & fils',
@@ -93,9 +93,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'boutot-menuiserie@gmail.com',
     'https://boutot-menuiserie.com',
-    0,
+    FALSE,
     2
-);
+),
 
 (
     'Vallis Bellemare',
@@ -105,9 +105,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'v.bellemare@gmail.com',
     'https://plomberie-bellemare.com',
-    0,
+    FALSE,
     2
-);
+),
 
 (
     'Claude Quinn',
@@ -117,9 +117,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'claude.quinn@gmail.com',
     NULL,
-    0,
+    FALSE,
     3
-);
+),
 
 (
     'Amitee Lécuyer',
@@ -129,9 +129,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'a.amitee@hotmail.com',
     'https://lecuyer-couture.com',
-    0,
+    FALSE,
     3
-);
+),
 
 (
     'Ernest Carignan',
@@ -141,9 +141,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'e-carigan@hotmail.com',
     NULL,
-    0,
+    FALSE,
     3
-);
+),
 
 (
     'Royden Charbonneau',
@@ -153,9 +153,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'r.charbonneau@gmail.com',
     NULL,
-    0,
+    FALSE,
     4
-);
+),
 
 (
     'Leala Dennis',
@@ -165,9 +165,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'l.dennos@hotmail.fr',
     'https://coiffure-leala-chambery.fr',
-    0,
+    FALSE,
     4
-);
+),
 
 (
     'C''est sup''hair',
@@ -177,9 +177,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'sup-hair@gmail.com',
     'https://sup-hair.fr',
-    0,
+    FALSE,
     4
-);
+),
 
 (
     'Le monde des fleurs',
@@ -189,9 +189,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'contact@le-monde-des-fleurs-annonay.fr',
     'https://le-monde-des-fleurs-annonay.fr',
-    0,
+    FALSE,
     4
-);
+),
 
 (
     'Valérie Laderoute',
@@ -201,9 +201,9 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'v-laredoute@gmail.com',
     NULL,
-    0,
+    FALSE,
     4
-);
+),
 
 (
     'CM Graphisme',
@@ -213,6 +213,6 @@ VALUES
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim beatae natus pariatur ea. Natus, maxime expedita? Nesciunt suscipit fugiat, tenetur aperiam inventore impedit ea enim sequi vel distinctio consectetur fugit.',
     'contact@cm-graphisme.com',
     'https://cm-graphisme.com',
-    0,
+    FALSE,
     4
 );

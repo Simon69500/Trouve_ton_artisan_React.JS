@@ -1,0 +1,6 @@
+mongodb+srv://Simon:6Nn1EA1nC22UwOq9@api.qndrots.mongodb.net/
+
+Username : Simon
+password : 6Nn1EA1nC22UwOq9
+mongodb+srv://Simon:<db_password>@api.qndrots.mongodb.net/
+MONGO_URI=mongodb+srv://Simon:6Nn1EA1nC22UwOq9@api.qndrots.mongodb.net/API?retryWrites=true&w=majority
