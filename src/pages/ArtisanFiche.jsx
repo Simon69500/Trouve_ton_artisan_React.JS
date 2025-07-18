@@ -37,7 +37,7 @@ const ArtisanFiche = () => {
                 </ul>
 
                 <div className="card-body">
-                    <a href="#" className="card-link">Visitez mon site</a>
+
                 </div>
             </div>
         </div>

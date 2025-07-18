@@ -6,6 +6,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 const categoryRouter = require('./routes/routeCategory');
 const artisansRouter = require('./routes/routeArtisan');
+const sequelize = require('./config/sequelize');
 
 var app = express();
 
@@ -19,6 +20,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/categories', categoryRouter);
 app.use('/api/artisans', artisansRouter)
+
+sequelize.sync()
+    .then(() => console.log('Base synchronisée'))
+    .catch(err => console.error('Erreur de synchro BDD', err));
 
 const PORT = 5000
 app.listen(PORT, ()=> {
