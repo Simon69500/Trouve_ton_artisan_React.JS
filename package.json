@@ -10,6 +10,7 @@
     "bcrypt": "^6.0.0",
     "bootstrap": "^5.3.7",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "mongoose": "^8.16.4",
     "mysql2": "^3.14.2",
@@ -27,9 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
   "proxy": "http://localhost:5000",
-
   "eslintConfig": {
     "extends": [
       "react-app",

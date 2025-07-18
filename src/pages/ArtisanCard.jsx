@@ -12,7 +12,7 @@ const ArtisanCard = () => {
                     <p class="card-text"><strong>Note : </strong> With supporting text below as a natural lead-in to additional content.</p>
                 </div>
                 <div class="card-footer text-body-secondary">
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
+
                 </div>
             </div>
         </section>

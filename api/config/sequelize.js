@@ -1,12 +1,17 @@
 const {Sequelize} = require('sequelize');
+require ('dotenv').config();
 
 
 // Connexion à la base de données MySQL
-const sequelize = new Sequelize ('artisan', 'root', '', {
-    host: 'localhost',
-    dialect: 'mysql',
-    logging: false,
-});
+const sequelize = new Sequelize (
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+        host: process.env.DB_HOST,
+        dialect: 'mysql',
+    }
+);
 
 async function testConnection() {
     try{
@@ -19,4 +24,4 @@ async function testConnection() {
 
 testConnection();
 
-module.exports = { sequelize };
+module.exports = sequelize ;
