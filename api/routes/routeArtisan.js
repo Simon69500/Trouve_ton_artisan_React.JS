@@ -6,6 +6,8 @@ router.get('/', artisanController.getArtisans);
 
 router.get('/specialite', artisanController.getArtisansBySpecialite);
 
+router.get('/top', artisanController.getTopArtisans);
+
 router.get('/:id', artisanController.getArtisanId);
 
 module.exports = router;
