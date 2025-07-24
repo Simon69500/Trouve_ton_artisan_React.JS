@@ -67,3 +67,12 @@ exports.getArtisansBySpecialite = async (req, res) => {
         res.status(500).json({ message: "Erreur serveur", error });    
     }
 };
+
+exports.getTopArtisans = async (req, res) => {
+    try {
+        const topArtisans = await artisanService.fetchTopArtisans();
+        res.json(topArtisans);
+    } catch(error) {
+        res.status(500).json({ message: "Erreur serveur", error });    
+    }
+};

@@ -1,5 +1,21 @@
 const ArtisanFiche = () => {
-    
+
+    /* Pour le formulaire 
+        await fetch('http://localhost:3000/contact', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-access-token': 'monTokenSecretUltraSimple123'
+  },
+  body: JSON.stringify({
+    nom,
+    email,
+    sujet,
+    message
+  })
+});
+*/
+
     return (
         <div className="artisan_fiche">
             <div className="card" style={{ width: "18rem" }}>

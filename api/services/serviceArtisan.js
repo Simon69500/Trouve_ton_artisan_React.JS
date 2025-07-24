@@ -1,4 +1,5 @@
 const { Op, fn, col, where } = require('sequelize');
+const db = require('../config/db.js');
 const Artisans = require("../models/artisan.js");
 
 
@@ -23,5 +24,22 @@ const Artisans = require("../models/artisan.js");
       where: where(fn('LOWER', col('specialite')), {
         [Op.like]: `%${specialite.toLowerCase()}%`
       })
+    });
+  };
+
+  exports.fetchTopArtisans = () => {
+    return new Promise((resolve, reject) => {
+      const sql = `
+        SELECT * FROM artisan
+        WHERE top_artisan = true
+        ORDER BY note DESC
+        LIMIT 3;
+      `;
+      db.query(sql, (err, results) => {
+        if(err) {
+          return reject(err);
+        }
+        resolve(results);
+      });
     });
   };
