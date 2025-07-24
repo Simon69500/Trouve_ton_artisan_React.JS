@@ -3,6 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const sequelize = require('./config/sequelize');
+const cors = require('cors');
 
 const categoryRouter = require('./routes/routeCategory');
 const artisansRouter = require('./routes/routeArtisan');
@@ -11,6 +12,11 @@ const contactRouter = require('./routes/routeContact');
 
 var app = express();
 
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST'], 
+  credentials: false, 
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
