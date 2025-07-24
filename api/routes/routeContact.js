@@ -10,6 +10,6 @@ const contactLimiter = rateLimit({
   message: "Trop de messages envoyés. Réessayez plus tard."
 });
 
-
-
 router.post('/send', contactLimiter, checkToken, contactController.sendEmail);
+
+module.exports = router; 
