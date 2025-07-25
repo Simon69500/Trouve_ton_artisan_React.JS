@@ -1,9 +1,7 @@
 import './App.css';
 
-
 import Footer from './components/footer';
 import Header from "./components/header";
-import ArtisanCard from './pages/ArtisanCard';
 import ArtisanFiche from './pages/ArtisanFiche';
 import Home from './pages/Home';
 import Error from './pages/Error';
@@ -12,20 +10,25 @@ import SearchArtisans from './components/searchArtisan';
 
 import { Route, Routes} from 'react-router-dom';
 
-
-
 function App() {
   return (
     <div>
     <Header/>
+
     <Routes>
-      <Route path='/' element={<Home/>}>Accueil</Route>
+      {/*Page Menu*/}
+      <Route path='/' element={<Home/>}/>
       <Route path='/categories/:id/artisans' element={<ArtisansParCategory/>}/>
-      <Route path='/artisans' element={<ArtisanCard/>}>Artisans</Route>
+      
+      {/*Page autres*/}
       <Route path='/artisans/:id' element={<ArtisanFiche/>}/>
-      <Route path='/search' element={<SearchArtisans/>}/>
-      <Route path='/erreur' element={<Error/>}>Erreur 404</Route>
+      <Route path='/search' element={<SearchArtisans/>}/> 
+
+      {/*Page Erreur 404*/}
+      <Route path='*' element={<Error/>}/>
+
     </Routes>
+
     <Footer/>
     </div>
   );

@@ -61,8 +61,6 @@ const Header = () => {
             {menuLinks.map((cat) => (
               <Nav.Link key={cat.id_categorie} as={Link} to={`/categories/${cat.id_categorie}/artisans`}>{cat.nom}</Nav.Link>
             ))}
-            <Nav.Link as={Link} to="/artisans">Artisans</Nav.Link>
-            <Nav.Link as={Link} to="/artisansFiche">Liste des Artisans</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

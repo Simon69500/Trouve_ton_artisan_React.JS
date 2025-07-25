@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
 import { fetchFromServer } from "../api/apiConfig";
+import { Link } from "react-router-dom";
 import "../styles/SCSS/pages/home.scss";
 
 const Home = () => {
   const [topArtisans, setTopArtisans] = useState([]);
 
   useEffect(() => {
-
-      async function getTopArtisans() {
-    try {
-      const data = await fetchFromServer("/artisans/top");
-      console.log(data)
-      setTopArtisans(data)
-
-    } catch (err) {
-      console.error("Erreur :", err);
+    async function getTopArtisans() {
+      try {
+        const data = await fetchFromServer("/artisans/top");
+        console.log(data);
+        setTopArtisans(data);
+      } catch (err) {
+        console.error("Erreur :", err);
+      }
     }
-  }
 
     getTopArtisans();
   }, []);
@@ -67,52 +66,64 @@ const Home = () => {
               ))}
             </div>
 
+            <button
+              className="carousel-control-prev "
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon bg-black"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+
             <div className="carousel-inner">
               {topArtisans.map((artisans, index) => (
                 <div
                   key={artisans.id_artisan}
                   className={`carousel-item ${index === 0 ? "active" : ""}`}
                 >
-                  <div className="artisan-card p-3">
-                    <h3>{artisans.nom}</h3>
-                    <p>
-                      <strong>Note :</strong> {artisans.note}
-                    </p>
-                    <p>
-                      <strong>Spécialité :</strong> {artisans.specialite}
-                    </p>
-                    <p>
-                      <strong>Ville :</strong> {artisans.ville}
-                    </p>
-                  </div>
+                  <Link
+                    to={`/artisans/${artisans.id_artisan}`}
+                    className="text-decoration-none text-dark h-100 w-100"
+                  >
+                    <div
+                      className="artisan-card card p-3 mx-auto"
+                      style={{ maxWidth: "400px" }}
+                    >
+                      <div className="card-header bg-primary text-white">
+                        <h3 className="card-title">{artisans.nom}</h3>
+                      </div>
+                      <div className="card-body">
+                        <p className="card-text">
+                          <strong>Note :</strong> {artisans.note}
+                        </p>
+                        <p className="card-text">
+                          <strong>Spécialité :</strong> {artisans.specialite}
+                        </p>
+                        <p className="card-text">
+                          <strong>Ville :</strong> {artisans.ville}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                  <button
+                    className="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      className="carousel-control-next-icon bg-black"
+                      aria-hidden="true"
+                    ></span>
+                    <span className="visually-hidden">Next</span>
+                  </button>
                 </div>
               ))}
             </div>
-
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
           </div>
         </div>
       </section>
