@@ -1,26 +1,24 @@
 import { useEffect, useState } from "react";
+import { fetchFromServer } from "../api/apiConfig";
 import "../styles/SCSS/pages/home.scss";
 
 const Home = () => {
   const [topArtisans, setTopArtisans] = useState([]);
 
-  async function fetchTopArtisans() {
+  useEffect(() => {
+
+      async function getTopArtisans() {
     try {
-      const response = await fetch("http://localhost:5000/artisans/top");
+      const data = await fetchFromServer("/artisans/top");
+      console.log(data)
+      setTopArtisans(data)
 
-      if (!response.ok) {
-        throw new Error("Erreur réseau");
-      }
-
-      const data = await response.json();
-      setTopArtisans(data);
-    } catch (error) {
-      console.error("Erreur fetch top artisans:", error);
+    } catch (err) {
+      console.error("Erreur :", err);
     }
   }
 
-  useEffect(() => {
-    fetchTopArtisans();
+    getTopArtisans();
   }, []);
 
   return (
