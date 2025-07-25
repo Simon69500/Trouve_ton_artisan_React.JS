@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchFromServer } from "../api/apiConfig";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const ArtisansParCategory = () => {
     const {id} = useParams();
@@ -39,6 +39,7 @@ const ArtisansParCategory = () => {
                  <div className="row">
                     {artisans.map((artisan) => (
                         <div className="col-md-4 mb-4" key={artisan.id_artisan}>
+                            <Link to={`/artisans/${artisan.id_artisan}`} className="text-decoration-none text-dark">
                             <div className="card h-100 text-center">
                                 <div className="card-header bg-primary text-white">
                                     <h5 className="card-title mb-0"> {artisan.nom} </h5>
@@ -66,6 +67,7 @@ const ArtisansParCategory = () => {
                                     </p>                                                                            
                                 </div>
                             </div>
+                        </Link>                            
                         </div>
                     ))}
                  </div>   
