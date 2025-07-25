@@ -7,8 +7,10 @@ import ArtisanCard from './pages/ArtisanCard';
 import ArtisanFiche from './pages/ArtisanFiche';
 import Home from './pages/Home';
 import Error from './pages/Error';
+import ArtisansParCategory from './components/artisansParCategory';
 
 import { Route, Routes} from 'react-router-dom';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/' element={<Home/>}>Accueil</Route>
+      <Route path='/categories/:id/artisans' element={<ArtisansParCategory/>}/>
       <Route path='/artisans' element={<ArtisanCard/>}>Artisans</Route>
       <Route path='/artisansFiche' element={<ArtisanFiche/>}>Liste des Artisans</Route>
       <Route path='/erreur' element={<Error/>}>Erreur 404</Route>
