@@ -8,8 +8,10 @@ import ArtisanFiche from './pages/ArtisanFiche';
 import Home from './pages/Home';
 import Error from './pages/Error';
 import ArtisansParCategory from './components/artisansParCategory';
+import SearchArtisans from './components/searchArtisan';
 
 import { Route, Routes} from 'react-router-dom';
+
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
       <Route path='/categories/:id/artisans' element={<ArtisansParCategory/>}/>
       <Route path='/artisans' element={<ArtisanCard/>}>Artisans</Route>
       <Route path='/artisans/:id' element={<ArtisanFiche/>}/>
+      <Route path='/search' element={<SearchArtisans/>}/>
       <Route path='/erreur' element={<Error/>}>Erreur 404</Route>
     </Routes>
     <Footer/>
