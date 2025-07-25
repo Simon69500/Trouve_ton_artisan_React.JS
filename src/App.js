@@ -19,12 +19,17 @@ function App() {
     <div>
     <Header/>
     <Routes>
-      <Route path='/' element={<Home/>}>Accueil</Route>
+      {/*Page Menu*/}
+      <Route path='/' element={<Home/>}/>
       <Route path='/categories/:id/artisans' element={<ArtisansParCategory/>}/>
-      <Route path='/artisans' element={<ArtisanCard/>}>Artisans</Route>
+      
+      {/*Page autres*/}
       <Route path='/artisans/:id' element={<ArtisanFiche/>}/>
-      <Route path='/search' element={<SearchArtisans/>}/>
-      <Route path='/erreur' element={<Error/>}>Erreur 404</Route>
+      <Route path='/search' element={<SearchArtisans/>}/> 
+
+      {/*Page Erreur 404*/}
+      <Route path='*' element={<Error/>}/>
+
     </Routes>
     <Footer/>
     </div>
