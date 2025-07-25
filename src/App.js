@@ -20,7 +20,7 @@ function App() {
       <Route path='/' element={<Home/>}>Accueil</Route>
       <Route path='/categories/:id/artisans' element={<ArtisansParCategory/>}/>
       <Route path='/artisans' element={<ArtisanCard/>}>Artisans</Route>
-      <Route path='/artisansFiche' element={<ArtisanFiche/>}>Liste des Artisans</Route>
+      <Route path='/artisans/:id' element={<ArtisanFiche/>}/>
       <Route path='/erreur' element={<Error/>}>Erreur 404</Route>
     </Routes>
     <Footer/>
