@@ -17,5 +17,12 @@
 @media (min-width: 730px)  {
     .logo {
     width: 150px;
+
+    .navbar {
+        display: flex ;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
 }
