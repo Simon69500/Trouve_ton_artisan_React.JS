@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const artisanController = require('../controllers/contArtisan');
 
-router.get('/specialite', artisanController.getArtisansBySpecialite);
+router.get('/nom', artisanController.getArtisansByNom);
 
 router.get('/top', artisanController.getTopArtisans);
 
