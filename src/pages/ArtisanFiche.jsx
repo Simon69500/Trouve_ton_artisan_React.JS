@@ -4,11 +4,15 @@ import { useParams } from "react-router-dom";
 import '../styles/SCSS/pages/artisanFiche.scss';
 
 const ArtisanFiche = () => {
+
+
+  /* Partie front -> API - Artisan*/
+
   const { id } = useParams();
   const [artisan, setArtisan] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  {/* Appel du Serveur*/}
+  /* Appel du Serveur*/
   useEffect(() => {
     const fetchArtisan = async () => {
       try {
@@ -24,8 +28,50 @@ const ArtisanFiche = () => {
     fetchArtisan();
   }, [id]);
 
-  if (loading) return <p>Chargement...</p>;
-  if (!artisan) return <p>Aucun artisan trouvé.</p>;
+
+
+   /* Partie front -> API - Formulaire*/
+
+    const [formData, setFormData] = useState({
+      nom: "",
+      email: "",
+      objet: "",
+      message: "",
+    });
+
+    const [formStatus, setFormStatus] = useState(null);
+
+    const handleChange = (e) => {
+      const { name, value} = e.target;
+      setFormData({...formData, [name]: value});
+    };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const response = fetchFromServer('/send', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if(!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || "Erreur lors de l'envoie ");
+        }
+
+        setFormStatus("Message envoyé avec succés !");
+        setFormData({nom:"", email:"", objet:"", message:""});
+      } catch(err) {
+        setFormStatus("Erreur :" + err.message);
+      }
+    };
+
+    
+  if (loading) {return <p>Chargement...</p>};
+  if (!artisan) {return <p>Aucun artisan trouvé.</p>};
 
   return (
 
@@ -52,24 +98,68 @@ const ArtisanFiche = () => {
               
               {/*Partie Formulaire de la card*/}
               <li className="list-group-item">
-                <h5>Formulaire de Contact</h5>
-                <div className="mb-3">
-                  <label htmlFor="FormControlInput1" className="form-label">Nom</label>
-                  <input type="text" className="form-control" id="FormControlInput1" placeholder="Votre nom ..." />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="FormControlInput2" className="form-label">Email address</label>
-                  <input type="email" className="form-control" id="FormControlInput2" placeholder="name@example.com" />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="FormControlInput3" className="form-label">Objet</label>
-                  <input type="text" className="form-control" id="FormControlInput3" />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="FormControlTextarea" className="form-label">Message</label>
-                  <textarea className="form-control" id="FormControlTextarea" rows="3"></textarea>
-                </div>
-                  <button type="submit" className="btn btn-primary">Envoyer</button>
+                <h5 className="text-center text-white">Formulaire de Contact</h5>
+                  <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                      <label htmlFor="FormControlInput1" className="form-label">Nom</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="FormControlInput1"
+                        name="nom"
+                        placeholder="Votre nom ..."
+                        value={formData.nom}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div className="mb-3">
+                      <label htmlFor="FormControlInput2" className="form-label">Email address</label>
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="FormControlInput2"
+                        name="email"
+                        placeholder="name@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div className="mb-3">
+                      <label htmlFor="FormControlInput3" className="form-label">Objet</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="FormControlInput3"
+                        name="objet"
+                        value={formData.objet}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div className="mb-3">
+                      <label htmlFor="FormControlTextarea" className="form-label">Message</label>
+                      <textarea
+                        className="form-control"
+                        id="FormControlTextarea"
+                        name="message"
+                        rows="3"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                      ></textarea>
+                    </div>
+
+                    <button type="submit" className="btn btn-primary">Envoyer</button>
+
+                    {/* Affichage d'un message de succès ou d'erreur si besoin */}
+                    {formStatus && <p className="mt-2">{formStatus}</p>}
+                  </form>
+
               </li>
 
               <li className="list-group-item"><strong>Site web :</strong> <a href={artisan.site_web} target="_blank" rel="noopener noreferrer">{artisan.site_web || "Non renseigné"}</a></li>
