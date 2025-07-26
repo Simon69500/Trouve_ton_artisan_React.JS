@@ -1,0 +1,25 @@
+@import "../variables.scss";
+
+h1 {
+    color: $bleuFonce;
+}
+
+strong {
+    color: $bleuMarine;
+}
+
+.card-header {
+    background-color: $bleu;
+}
+
+.card-body {
+    background-color: $Background2;
+    
+    .list-group-item {
+        background-color: $Background2;
+    }
+}
+
+.card-footer {
+    background-color: $bleu;
+}

@@ -66,6 +66,70 @@
         }
     }
 
+// Format Tablette / Intermédiaire
+@media (min-width: 431px) and (max-width: 729px) {
+
+    #footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        
+        font-family: Graphik, sans-serif;
+        background-color:$Background2  ;
+        width: 100%;
+        height: 220px;
+        }
+
+  .logo-imgFooter {
+    width: 120px;
+    height: 90px;
+    margin-bottom: 20px;
+  }
+
+    // Partie Adresse 
+    .adress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+
+    p {
+        margin-top: 0;
+    }
+
+    h4 {
+        margin-top: 0px;
+        color:$bleu ;
+    }
+ }
+
+    // Partie Pages légales
+    .pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    width: 200px;
+    height: 200px;
+    padding-bottom: 20px;
+
+    .link{
+        text-decoration:none;
+        color: $bleuFonce;
+    }
+
+    h4 {
+        margin-bottom: 0px;
+        color:$bleu ;
+    }
+
+  }
+}
+
+
 // Format Desktop
 @media (min-width: 730px) {
 
@@ -87,6 +151,7 @@
         height: 100px;
        
     }
+
     // Partie Adresse 
     .adress {
     display: flex;

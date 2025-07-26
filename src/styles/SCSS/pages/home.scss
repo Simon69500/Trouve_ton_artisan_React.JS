@@ -9,7 +9,6 @@
         color: $bleuMarine;
         text-align: center;
         font-weight: 700;
-        font-size: xx-large;
     }
 
     .etape {
@@ -44,7 +43,13 @@
         font-weight: 600;
         font-size: x-large;
     }    
- 
+    .card-header {
+        background-color: $bleu;
+    }
+
+    .card-body {
+        background-color: $Background2;
+    }
 }
 
 

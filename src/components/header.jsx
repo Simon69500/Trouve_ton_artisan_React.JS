@@ -34,11 +34,13 @@ const Header = () => {
   }, [])
 
   return (
-    <Navbar expand="lg" bg="light" variant="light">
+
+    <Navbar expand="lg" className='navbar'>
       <Container>
 
+        {/* Logo*/}
         <Navbar.Brand as={Link} to="/">
-          <img src={Logo} alt="Logo" height="40" />
+          <img src={Logo} alt="Logo" className='logo'/>
         </Navbar.Brand>
 
           {/* Barre de Recherche*/}

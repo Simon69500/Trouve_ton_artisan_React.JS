@@ -6,6 +6,7 @@ import "../styles/SCSS/pages/home.scss";
 const Home = () => {
   const [topArtisans, setTopArtisans] = useState([]);
 
+
   useEffect(() => {
     async function getTopArtisans() {
       try {
@@ -21,8 +22,10 @@ const Home = () => {
   }, []);
 
   return (
-    <>
       <section id="home">
+
+
+                {/* Partie Tutoriel */}
         <div className="tuto p-2 m-2">
           <h1 className="title_principal">Comment trouver mon artisan ?</h1>
           <div className="etape m-2 h-100">
@@ -49,8 +52,10 @@ const Home = () => {
           </div>
         </div>
 
+
+        {/* Partie Top 3 artisans*/}
         <div className="top_artisan p-2 m-2">
-          <h2 className="title_secondary">Le top 3 des artisans</h2>
+          <h2 className="title_secondary fs-1">Le top 3 des artisans</h2>
           <div id="carouselExampleIndicators" className="carousel slide">
             <div className="carousel-indicators">
               {topArtisans.map((_, index) => (
@@ -93,18 +98,18 @@ const Home = () => {
                       className="artisan-card card p-3 mx-auto"
                       style={{ maxWidth: "400px" }}
                     >
-                      <div className="card-header bg-primary text-white">
-                        <h3 className="card-title">{artisans.nom}</h3>
+                      <div className="card-header text-white">
+                        <h3 className="card-title fs-2">{artisans.nom}</h3>
                       </div>
                       <div className="card-body">
                         <p className="card-text">
-                          <strong>Note :</strong> {artisans.note}
+                          <strong className="text-white fs-6 px-3">Note :</strong>  {artisans.note}
                         </p>
                         <p className="card-text">
-                          <strong>Spécialité :</strong> {artisans.specialite}
+                          <strong className="text-white fs-6 px-3">Spécialité :</strong> {artisans.specialite}
                         </p>
                         <p className="card-text">
-                          <strong>Ville :</strong> {artisans.ville}
+                          <strong className="text-white fs-6 px-3">Ville :</strong>  {artisans.ville}
                         </p>
                       </div>
                     </div>
@@ -127,7 +132,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </>
   );
 };
 
