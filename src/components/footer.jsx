@@ -25,10 +25,10 @@ const Footer = () => {
             </div>
             <div className='pages'>
                 <h4>Pages légales</h4>
-                <NavLink to="/Erreur" className="link">Mentions légales</NavLink>
-                <NavLink to="/Erreur" className="link">Données personelles</NavLink>
-                <NavLink to="/Erreur" className="link">Cookies</NavLink>
-                <NavLink to="/Erreur" className="link">Accesibilités</NavLink>
+                <NavLink to="/construction" className="link">Mentions légales</NavLink>
+                <NavLink to="/construction" className="link">Données personelles</NavLink>
+                <NavLink to="/construction" className="link">Cookies</NavLink>
+                <NavLink to="/construction" className="link">Accesibilités</NavLink>
             </div>
         </div>
         </>

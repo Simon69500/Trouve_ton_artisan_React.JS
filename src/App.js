@@ -1,4 +1,5 @@
-import './App.css';
+import "./styles/SCSS/pages/app.scss"
+import { Route, Routes} from 'react-router-dom';
 
 import Footer from './components/footer';
 import Header from "./components/header";
@@ -7,8 +8,7 @@ import Home from './pages/Home';
 import Error from './pages/Error';
 import ArtisansParCategory from './components/artisansParCategory';
 import SearchArtisans from './components/searchArtisan';
-
-import { Route, Routes} from 'react-router-dom';
+import Construction from "./pages/Construction";
 
 function App() {
   return (
@@ -22,7 +22,8 @@ function App() {
       
       {/*Page autres*/}
       <Route path='/artisans/:id' element={<ArtisanFiche/>}/>
-      <Route path='/search' element={<SearchArtisans/>}/> 
+      <Route path='/search' element={<SearchArtisans/>}/>
+      <Route path="/construction" element={<Construction/>}/> 
 
       {/*Page Erreur 404*/}
       <Route path='*' element={<Error/>}/>
