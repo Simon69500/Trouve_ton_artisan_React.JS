@@ -39,8 +39,6 @@ const ArtisanFiche = () => {
       message: "",
     });
 
-    const [formStatus, setFormStatus] = useState(null);
-
     const handleChange = (e) => {
       const { name, value} = e.target;
       setFormData({...formData, [name]: value});
@@ -49,7 +47,7 @@ const ArtisanFiche = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = fetchFromServer('/send', {
+        const response = await fetchFromServer('/contact', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -57,17 +55,25 @@ const ArtisanFiche = () => {
           body: JSON.stringify(formData),
         });
 
-        if(!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.message || "Erreur lors de l'envoie ");
+        if (response.status === 429) {
+          alert("⚠️ Vous avez envoyé trop de messages. Réessayez plus tard.");
+          return;
         }
 
-        setFormStatus("Message envoyé avec succés !");
-        setFormData({nom:"", email:"", objet:"", message:""});
-      } catch(err) {
-        setFormStatus("Erreur :" + err.message);
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || "Erreur lors de l'envoi");
+        }
+
+        alert("✅ Message envoyé !");
+        setFormData({ nom: "", email: "", objet: "", message: "" });
+
+      } catch (err) {
+        console.error("Erreur :", err.message);
+        alert("❌ Une erreur est survenue : Vous avez envoyé trop d'email attendre 15 mn ");
       }
     };
+
 
     
   if (loading) {return <p>Chargement...</p>};
@@ -155,9 +161,6 @@ const ArtisanFiche = () => {
                     </div>
 
                     <button type="submit" className="btn btn-primary">Envoyer</button>
-
-                    {/* Affichage d'un message de succès ou d'erreur si besoin */}
-                    {formStatus && <p className="mt-2">{formStatus}</p>}
                   </form>
 
               </li>
