@@ -1,5 +1,17 @@
 @import '../variables.scss';
 
+.card .card-header{
+    background-color: $bleu;
+}
+
+.card-body {
+    background-color: $Background2;
+}
+
+.card .card-footer {
+    background-color: $bleu;
+}
+
 h1 {
     color: $bleuFonce;
 }
@@ -8,14 +20,3 @@ strong {
     color: $bleuMarine;
 }
 
-.card-header {
-    background-color: $bleu;
-}
-
-.card-body {
-    background-color: $Background2;
-}
-
-.card-footer {
-    background-color: $bleu;
-}

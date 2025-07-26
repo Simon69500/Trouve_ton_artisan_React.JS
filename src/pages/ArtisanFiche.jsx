@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchFromServer } from "../api/apiConfig";
 import { useParams } from "react-router-dom";
+import StarRating from "../components/noteEtoiles";
 import '../styles/SCSS/pages/artisanFiche.scss';
 
 const ArtisanFiche = () => {
@@ -95,12 +96,12 @@ const ArtisanFiche = () => {
               {/*Partie body de la card*/}
           <div className="card-body">
             <ul className="list-group list-group-flush">
-              <li className="list-group-item"><strong>Spécialité :</strong> {artisan.specialite}</li>
-              <li className="list-group-item"><strong>Ville :</strong> {artisan.ville}</li>
-              <li className="list-group-item"><strong>A Propos :</strong>
+              <li className="list-group-item  text-center"><strong>Spécialité :</strong> {artisan.specialite}</li>
+              <li className="list-group-item  text-center"><strong>Ville :</strong> {artisan.ville}</li>
+              <li className="list-group-item text-center"><strong>A Propos :</strong>
               <p>{artisan.about}
                 </p></li>
-              <li className="list-group-item"><strong>Note :</strong> {artisan.note}</li>            
+              <li className="list-group-item text-center"><strong>Note :</strong><StarRating rating={artisan.note} /></li>            
               
               {/*Partie Formulaire de la card*/}
               <li className="list-group-item">

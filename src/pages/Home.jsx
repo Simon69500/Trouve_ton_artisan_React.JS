@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchFromServer } from "../api/apiConfig";
 import { Link } from "react-router-dom";
+import StarRating from "../components/noteEtoiles";
 import "../styles/SCSS/pages/home.scss";
 
 const Home = () => {
@@ -55,7 +56,7 @@ const Home = () => {
 
         {/* Partie Top 3 artisans*/}
         <div className="top_artisan p-2 m-2">
-          <h2 className="title_secondary fs-1">Le top 3 des artisans</h2>
+          <h2 className="title_secondary  py-3 fs-1">Le top 3 des artisans</h2>
           <div id="carouselExampleIndicators" className="carousel slide">
             <div className="carousel-indicators">
               {topArtisans.map((_, index) => (
@@ -103,13 +104,13 @@ const Home = () => {
                       </div>
                       <div className="card-body">
                         <p className="card-text">
-                          <strong className="text-white fs-6 px-3">Note :</strong>  {artisans.note}
+                          <strong className=" fs-6 px-3">Note :</strong><StarRating rating={artisans.note} />
                         </p>
                         <p className="card-text">
-                          <strong className="text-white fs-6 px-3">Spécialité :</strong> {artisans.specialite}
+                          <strong className="fs-6 px-3">Spécialité :</strong> {artisans.specialite}
                         </p>
                         <p className="card-text">
-                          <strong className="text-white fs-6 px-3">Ville :</strong>  {artisans.ville}
+                          <strong className=" fs-6 px-3">Ville :</strong>  {artisans.ville}
                         </p>
                       </div>
                     </div>

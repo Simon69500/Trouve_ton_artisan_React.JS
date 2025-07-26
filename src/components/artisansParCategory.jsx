@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchFromServer } from "../api/apiConfig";
 import { useParams, Link } from "react-router-dom";
+import StarRating from "../components/noteEtoiles";
 import '../styles/SCSS/components/artisansParCategory.scss';
 
 const ArtisansParCategory = () => {
@@ -63,7 +64,7 @@ const ArtisansParCategory = () => {
                                         {artisan.about}
                                     </p>
                                     <p className="card-text fs-6">
-                                        <strong className="px-3">Note :</strong> {artisan.note}
+                                        <strong className="px-3">Note :</strong> <StarRating rating={artisan.note} />
                                     </p>                                         
                                 </div>
                                 <div className="card-footer text-white ">
