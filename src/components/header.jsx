@@ -59,7 +59,7 @@ const Header = () => {
         {/* Menu navigation*/}
         <Navbar.Toggle aria-controls="menu" />
         <Navbar.Collapse id="menu">
-          <Nav className="me-auto">
+          <Nav className="px-3">
             {menuLinks.map((cat) => (
               <Nav.Link key={cat.id_categorie} as={Link} to={`/categories/${cat.id_categorie}/artisans`}>{cat.nom}</Nav.Link>
             ))}
