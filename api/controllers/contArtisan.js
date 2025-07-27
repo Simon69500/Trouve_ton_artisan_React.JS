@@ -48,17 +48,17 @@ exports.getArtisansByCategory = async (req, res) => {
     }
 };
 
-exports.getArtisansBySpecialite = async (req, res) => {
+exports.getArtisansByNom = async (req, res) => {
     try {
-        const { specialite } = req.query;
+        const { nom } = req.query;
  
-        if (!specialite) {
-            return res.status(400).json({ message: 'Paramètre spécialité manquant.' });
+        if (!nom) {
+            return res.status(400).json({ message: 'Paramètre nom manquant.' });
         }
-        const artisans = await artisanService.getArtisanBySpecialite(specialite);
+        const artisans = await artisanService.getArtisanByNom(nom);
 
     if (artisans.length === 0) {
-      return res.status(404).json({ message: 'Aucun artisan trouvé pour cette spécialité !' });
+      return res.status(404).json({ message: 'Aucun artisan trouvé pour se nom !' });
     }
 
     res.json(artisans)

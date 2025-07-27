@@ -10,11 +10,11 @@ const SearchArtisans = () => {
 
     const query = new URLSearchParams(location.search).get('query');
 
-  {/* Appel du Serveur*/}
+  /* Appel du Serveur*/
     useEffect(() => {
         const recherche = async () => {
             try {
-                const data = await fetchFromServer(`/artisans/specialite?specialite=${query}`);
+                const data = await fetchFromServer(`/artisans/nom?nom=${query}`);
                 setResultats(data);
             } catch(error) {
                 console.error("Erreur lors de la recherche :", error.message);

@@ -18,10 +18,10 @@ const Artisans = require("../models/artisan.js");
     });
   };
 
-  exports.getArtisanBySpecialite = async (specialite) => {
+  exports.getArtisanByNom = async (nom) => {
     return await Artisans.findAll({
-      where: where(fn('LOWER', col('specialite')), {
-        [Op.like]: `%${specialite.toLowerCase()}%`
+      where: where(fn('LOWER', col('nom')), {
+        [Op.like]: `%${nom.toLowerCase()}%`
       })
     });
   };
