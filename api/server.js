@@ -39,14 +39,15 @@ sequelize.sync()
     .catch(err => console.error('Erreur de synchro BDD', err));
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../build')));
+  app.use(express.static(path.join(__dirname, 'artisan_react_js/build')));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../build' , 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'artisan_react_js/build', 'index.html'));
   });
 }
 
 const PORT = process.env.PORT || 5000 ;
+
 app.listen(PORT, ()=> {
     console.log(`🚀 Serveur backend lancé sur http://localhost:${PORT}`)
 });
