@@ -1,6 +1,6 @@
 const {Sequelize} = require('sequelize');
 
-// Connexion à la base de données MySQL
+// Connexion à la base de données PostgreSQL
 const sequelize = new Sequelize (
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -10,12 +10,6 @@ const sequelize = new Sequelize (
         port: Number(process.env.DB_PORT) || 5432,
         dialect: 'postgres',
         logging: false,
-        dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false
-        }
-    }
     }
 );
 
