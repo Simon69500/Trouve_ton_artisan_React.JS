@@ -12,8 +12,10 @@ const contactRouter = require('./routes/routeContact');
 
 var app = express();
 
+const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:3000';
+
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: allowedOrigin,
   methods: ['GET', 'POST'], 
   credentials: false, 
 }));
@@ -32,7 +34,15 @@ sequelize.sync()
     .then(() => console.log('Base synchronisée'))
     .catch(err => console.error('Erreur de synchro BDD', err));
 
-const PORT = 5000
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../build')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../build' , 'index.html'));
+  });
+}
+
+const PORT = process.env.PORT || 5000 ;
 app.listen(PORT, ()=> {
     console.log(`🚀 Serveur backend lancé sur http://localhost:${PORT}`)
 });
