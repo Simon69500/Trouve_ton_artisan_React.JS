@@ -5,10 +5,6 @@ var logger = require('morgan');
 const sequelize = require('./config/sequelize');
 const cors = require('cors');
 
-require('dotenv').config({ path: path.resolve(__dirname, '.env') });
-console.log('DB_HOST:', process.env.DB_HOST);
-
-
 const categoryRouter = require('./routes/routeCategory');
 const artisansRouter = require('./routes/routeArtisan');
 const contactRouter = require('./routes/routeContact');
@@ -16,10 +12,8 @@ const contactRouter = require('./routes/routeContact');
 
 var app = express();
 
-const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:3000';
-
 app.use(cors({
-  origin: allowedOrigin,
+  origin: 'https://trouve-ton-artisan-react-js.onrender.com',
   methods: ['GET', 'POST'], 
   credentials: false, 
 }));
