@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@use "../variables" as vars;
 
 .tuto {
     display: flex;
@@ -6,7 +6,7 @@
     align-items: stretch;
 
     .title_principal {
-        color: $bleuMarine;
+        color: vars.$bleuMarine;
         text-align: center;
         font-weight: 700;
     }
@@ -18,7 +18,7 @@
         align-items: center;
         
         .bi {
-            color: $bleu;
+            color: vars.$bleu;
         }
 
         .text_tuto {
@@ -26,8 +26,8 @@
             border-radius: 30px;
             font-size:medium;
             text-align: center;
-            background-color: $bleuMarine;
-            color: $blanc;
+            background-color: vars.$bleuMarine;
+            color: vars.$blanc;
 
         }
     }
@@ -38,17 +38,17 @@
   text-align: center;
 
     .title_secondary {
-        color: $bleuMarine;
+        color: vars.$bleuMarine;
         text-align: center;
         font-weight: 600;
         font-size: x-large;
     }    
     .card-header {
-        background-color: $bleu;
+        background-color: vars.$bleu;
     }
 
     .card-body {
-        background-color: $Background2;
+        background-color: vars.$Background2;
     }
 }
 

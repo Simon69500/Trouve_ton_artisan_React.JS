@@ -1,7 +1,7 @@
-@import "../variables.scss";
+@use "../variables" as vars ;
 
 .navbar {
-    background-color: $Background2;
+    background-color: vars.$Background2;
 }
 
 .logo {
