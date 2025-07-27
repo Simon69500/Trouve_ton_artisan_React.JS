@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchFromServer } from "../api/apiConfig";
 import { useParams } from "react-router-dom";
 import StarRating from "../components/noteEtoiles";
+import LogoEntreprise from '../assets/logo/logo2.png';
 import '../styles/SCSS/pages/artisanFiche.scss';
 
 const ArtisanFiche = () => {
@@ -90,7 +91,8 @@ const ArtisanFiche = () => {
 
               {/*Partie header de la card*/}
           <div className="card-header">
-            <h5 className="card-title text-white text-center fs-3 ">{artisan.nom}</h5>
+            <img src={LogoEntreprise} class="card-img-top" alt="logo de l'entreprise"></img>
+            <h5 className="card-title text-white text-center fs-3 py-3 ">{artisan.nom}</h5>
           </div>
 
               {/*Partie body de la card*/}

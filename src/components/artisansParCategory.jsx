@@ -12,7 +12,7 @@ const ArtisansParCategory = () => {
     const [category, setCategory] = useState(true)
 
 
-    {/* Appel du Serveur */}
+    /* Appel du Serveur */
     useEffect(() => {
         const fetchArtisans = async () => {
             try {
@@ -56,12 +56,6 @@ const ArtisansParCategory = () => {
                                     </p>
                                     <p className="card-text fs-6">
                                         <strong className="px-3">Ville :</strong> {artisan.ville}
-                                    </p>
-                                    <p className="card-text fs-6">
-                                        <strong className="px-3">A propos :</strong> 
-                                    </p>
-                                    <p className=" text-center">
-                                        {artisan.about}
                                     </p>
                                     <p className="card-text fs-6">
                                         <strong className="px-3">Note :</strong> <StarRating rating={artisan.note} />
