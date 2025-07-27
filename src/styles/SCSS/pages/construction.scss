@@ -1,6 +1,6 @@
-@import "../variables.scss";
+@use "../variables" as vars;
 
 
 .title {
-    color:$bleuMarine;
+    color: vars.$bleuMarine;
 }

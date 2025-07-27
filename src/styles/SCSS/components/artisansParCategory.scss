@@ -1,22 +1,22 @@
-@import '../variables.scss';
+@use '../variables' as vars;
 
 .card .card-header{
-    background-color: $bleu;
+    background-color: vars.$bleu;
 }
 
 .card-body {
-    background-color: $Background2;
+    background-color: vars.$Background2;
 }
 
 .card .card-footer {
-    background-color: $bleu;
+    background-color: vars.$bleu;
 }
 
 h1 {
-    color: $bleuFonce;
+    color: vars.$bleuFonce;
 }
 
 strong {
-    color: $bleuMarine;
+    color:  vars.$bleuMarine;
 }
 
