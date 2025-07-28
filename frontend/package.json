@@ -1,6 +1,6 @@
 {
-  "homepage": ".",
-  "name": "artisan_react_js",
+  "homepage": "https://trouve-ton-artisan-bl0v.onrender.com",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
