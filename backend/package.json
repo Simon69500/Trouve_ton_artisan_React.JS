@@ -2,9 +2,10 @@
   "name": "backend",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "start": "node server.js"
-  },
+"scripts": {
+  "start": "NODE_ENV=production node server.js",
+  "dev": "node server.js"
+},
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
