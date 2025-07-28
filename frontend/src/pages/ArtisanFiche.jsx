@@ -46,35 +46,32 @@ const ArtisanFiche = () => {
       setFormData({...formData, [name]: value});
     };
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const response = await fetchFromServer('/contact', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetchFromServer('/contact', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-        if (response.status === 429) {
-          alert("⚠️ Vous avez envoyé trop de messages. Réessayez plus tard.");
-          return;
-        }
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Erreur lors de l'envoi");
+    }
 
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.message || "Erreur lors de l'envoi");
-        }
+    alert("✅ Message envoyé !");
+    setFormData({ nom: "", email: "", objet: "", message: "" });
 
-        alert("✅ Message envoyé !");
-        setFormData({ nom: "", email: "", objet: "", message: "" });
+  } catch (err) {
+    console.error("Erreur :", err.message);
+    alert(`❌ Une erreur est survenue : ${err.message}`);
+  }
+};
 
-      } catch (err) {
-        console.error("Erreur :", err.message);
-        alert("❌ Une erreur est survenue : Vous avez envoyé trop d'email attendre 15 mn ");
-      }
-    };
+
 
 
     
