@@ -37,22 +37,24 @@ cd backend
 npm install
 ```
 **Frontend** :
-```
+- railway.toml ** connection Backend **
 cd ../frontend
 npm install
 ```
 
 ### 3. Base de données
 
-**Création**
+**Création** :
 Dans un outil comme MySQL Workbench ou en ligne de commande, exécutez :
+```
 CREATE DATABASE nom_de_ta_bdd;
 USE nom_de_ta_bdd;
+```
 
 Exécutez ensuite le script schema.sql pour créer les tables.
 
-**Alimentation**
-Chargez les données avec le script insert_data.sql.
+**Alimentation** :
+- Chargez les données avec le script insert_data.sql.
 
 **⚙️ Configuration des variables d'environnement**
 
