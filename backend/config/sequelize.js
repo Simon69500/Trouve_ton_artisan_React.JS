@@ -1,5 +1,8 @@
 const { Sequelize } = require('sequelize');
-require('dotenv').config({ path: '.env.local' });
+
+const envFile = process.env.NODE_ENV === 'production' ? '.env' : '.env.local';
+require('dotenv').config({ path: envFile });
+
 
 // Configuration Sequelize
 const sequelize = new Sequelize(
