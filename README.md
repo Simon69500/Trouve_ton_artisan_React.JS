@@ -100,3 +100,4 @@ npm run dev
 ## 👨‍💻 Auteur
 Simon — Développeur web Fullstack
 Projet réalisé dans le cadre de ma formation
+
