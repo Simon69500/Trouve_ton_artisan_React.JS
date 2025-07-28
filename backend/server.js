@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(cors({
-  origin: 'https://trouve-ton-artisan-react-js.onrender.com',
+  origin: ['https://trouve-ton-artisan-bl0v.onrender.com', 'http://localhost:3000'],
   methods: ['GET', 'POST'], 
   credentials: false, 
 }));
