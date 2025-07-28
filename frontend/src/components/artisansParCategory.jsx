@@ -46,7 +46,7 @@ const ArtisansParCategory = () => {
                     {artisans.map((artisan) => (
                         <div className="col-md-4 p-4" key={artisan.id_artisan}>
                             <Link to={`/artisans/${artisan.id_artisan}`} className="text-decoration-none text-dark">
-                            <div className="card h-100 text-center">
+                            <div className="card h-100 text-center m-3">
                                 <div className="card-header  text-white">
                                     <h5 className="card-title mb-0"> {artisan.nom} </h5>
                                 </div>
