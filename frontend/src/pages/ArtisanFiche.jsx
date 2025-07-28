@@ -66,7 +66,7 @@ const handleSubmit = async (e) => {
 
   } catch (err) {
     console.error("Erreur :", err.message);
-    alert(`❌ Une erreur est survenue : ${err.message}`);
+    alert(`${err.message}`);
   }
 };
 
