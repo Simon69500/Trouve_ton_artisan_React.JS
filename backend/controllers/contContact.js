@@ -8,7 +8,7 @@ exports.sendEmail = async (req, res) => {
             return res.status(400).json({message: 'Tous les champs sont requis !'});
         }
 
-        await contactService.sendMail({ nom, email, message})
+        await contactService.sendMail({ nom, email,objet, message})
         res.status(200).json({message: 'Email envoyé avec succés !'})
     } catch(error) {
         res.status(500).json({message: 'Erreur serveur', error});
