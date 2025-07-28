@@ -57,9 +57,8 @@ const handleSubmit = async (e) => {
       body: JSON.stringify(formData),
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || "Erreur lors de l'envoi");
+    if (!response.error) {
+      throw new Error(response.message || "Erreur lors de l'envoi");
     }
 
     alert("✅ Message envoyé !");
