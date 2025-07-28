@@ -1,26 +1,26 @@
 # 🎲 Devoir CEF - Trouve ton artisan
 Application mobile-first permettant aux utilisateurs de trouver les artisans de leur région et de rentrer en contact avec eux.
 
+
 ## 📁 Structure du projet
+
 artisan_react_js/
-frontend/  **Application React**
-backend/  **Serveur Express.js**
-database/  **Scripts SQL** (création + alimentation)
-README.md
+- frontend/  **Application React**
+- backend/  **Serveur Express.js**
+- database/  **Scripts SQL** (création + alimentation)
+- railway.toml **connection Backend**
+- README.md
+
 
 ## ✅ Prérequis
 Avant de lancer le projet, assurez-vous d’avoir installé :
 
-
 - Node.js v18 ou plus
-
 - npm
-
 - MySQL
-
 - Un IDE (VSCode recommandé)
-
 - Git
+
 
 ## 🚀 Installation
 
@@ -92,8 +92,8 @@ cd ../frontend
 npm run dev
 ```
 
-L’application est accessible à l’adresse : http://localhost:3000
+## L’application est accessible à l’adresse : http://localhost:3000
 
-👨‍💻 Auteur
+## 👨‍💻 Auteur
 Simon — Développeur web Fullstack
 Projet réalisé dans le cadre de ma formation
