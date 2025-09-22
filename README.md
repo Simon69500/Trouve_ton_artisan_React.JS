@@ -2,12 +2,14 @@
 Application mobile-first permettant aux utilisateurs de trouver les artisans de leur région et de rentrer en contact avec eux.
 
 <img width="386" height="1184" alt="home" src="https://github.com/user-attachments/assets/db7c91fb-970e-4917-80bd-032cd3dd971f" /> <br>
-
 <img width="1920" height="1092" alt="home_desktop" src="https://github.com/user-attachments/assets/0f108829-672c-4a6e-ba4b-8a364260f2ab" />
 
 
-
-
+## ✨ Fonctionnalités
+- Rechercher un artisan par catégorie
+- Consulter les fiches artisans
+- Envoyer un message via le formulaire de contact
+- Responsive design (mobile, tablette, desktop)
 
 
 ## 📁 Structure du projet
@@ -16,7 +18,6 @@ artisan_react_js/
 - frontend/  **Application React**
 - backend/  **Serveur Express.js**
 - database/  **Scripts SQL** (création + alimentation)
-- railway.toml **connection Backend**
 - README.md
 
 
