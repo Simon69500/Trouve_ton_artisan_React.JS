@@ -1,8 +1,10 @@
 # 🎲 Devoir CEF - Trouve ton artisan
 Application mobile-first permettant aux utilisateurs de trouver les artisans de leur région et de rentrer en contact avec eux.
 
-![Version Mobile - Home page](https://github.com/user-attachments/files/22464494/home.png)  
-![Version Desktop - Home page](https://github.com/user-attachments/files/22464513/home_desktop.png)  
+![Version Mobile - Home page]<img width="386" height="1184" alt="home" src="https://github.com/user-attachments/assets/db7c91fb-970e-4917-80bd-032cd3dd971f" /> <br>
+
+![Version Desktop - Home page]<img width="1920" height="1092" alt="home_desktop" src="https://github.com/user-attachments/assets/0f108829-672c-4a6e-ba4b-8a364260f2ab" />
+
 
 
 
