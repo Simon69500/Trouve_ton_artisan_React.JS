@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(cors({
-  origin: ['https://trouve-ton-artisan-bl0v.onrender.com', 'http://localhost:3000'], // ajuster la bonne URL apres le deployement sur Vercel  
+  origin: ['https://trouve-ton-artisan-react-js.vercel.app/', 'http://localhost:3000'], // ajuster la bonne URL apres le deployement sur Vercel  
   methods: ['GET', 'POST'], 
   credentials: false, 
 }));
