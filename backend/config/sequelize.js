@@ -13,7 +13,13 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST || 'localhost',
     port: parseInt(process.env.DB_PORT, 10) || 3306,  //     port: Number(process.env.DB_PORT) || 3306,
     dialect: 'mysql',
-    logging: false  // ajouter pour eviter trop logs
+    logging: false,  // ajouter pour eviter trop logs
+    pool: {
+      max: 5,      // nombre max de connexions
+      min: 0,      // nombre min de connexions
+      acquire: 30000, // temps max pour obtenir une connexion
+      idle: 10000     // fermeture après 10s d’inactivité
+    }
   }
 );
 
