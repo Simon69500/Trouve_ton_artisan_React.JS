@@ -7,7 +7,6 @@ import "../styles/SCSS/pages/home.scss";
 const Home = () => {
   const [topArtisans, setTopArtisans] = useState([]);
 
-
   useEffect(() => {
     async function getTopArtisans() {
       try {
