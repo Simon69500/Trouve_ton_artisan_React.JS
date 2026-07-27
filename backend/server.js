@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(cors({
-  origin: ['https://trouve-ton-artisan-bl0v.onrender.com', 'http://localhost:3000'],
+  origin: [process.env.FRONTEND_URL, 'http://localhost:3000'], // ajuster la bonne URL apres le deployement sur Vercel  
   methods: ['GET', 'POST'], 
   credentials: false, 
 }));

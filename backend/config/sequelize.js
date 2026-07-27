@@ -1,18 +1,25 @@
 const { Sequelize } = require('sequelize');
 
 const envFile = process.env.NODE_ENV === 'production' ? '.env' : '.env.local';
-require('dotenv').config({ path: envFile });
+require('dotenv').config(); // j'ai enlever cette partie dans confing({ path: envFile })
 
 
 // Configuration Sequelize
 const sequelize = new Sequelize(
-  process.env.MYSQL_DATABASE,
-  process.env.MYSQLUSER,
-  process.env.MYSQL_ROOT_PASSWORD,
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    host: process.env.MYSQLHOST || 'localhost',
-    port: Number(process.env.MYSQLPORT) || 3306,
+    host: process.env.DB_HOST || 'localhost',
+    port: parseInt(process.env.DB_PORT, 10) || 3306,  //     port: Number(process.env.DB_PORT) || 3306,
     dialect: 'mysql',
+    logging: false,  // ajouter pour eviter trop logs
+    pool: {
+      max: 5,      // nombre max de connexions
+      min: 0,      // nombre min de connexions
+      acquire: 30000, // temps max pour obtenir une connexion
+      idle: 10000     // fermeture après 10s d’inactivité
+    }
   }
 );
 
