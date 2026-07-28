@@ -1,0 +1,27 @@
+# Dépendances
+node_modules/
+/frontend/node_modules
+/backend/node_modules
+
+# Variables d'environnement (secrets)
+.env
+.env.local
+.env.*.local
+/frontend/.env.local
+/backend/.env
+/backend/.env.local
+
+# Build frontend
+/frontend/build
+/frontend/coverage
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Système / IDE
+.DS_Store
+.vscode/
+.idea/
