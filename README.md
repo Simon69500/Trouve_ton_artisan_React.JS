@@ -104,7 +104,7 @@ cd ../frontend
 npm run dev
 ```
 
-## L’application est accessible à l’adresse : http://localhost:3000
+## L’application est accessible à l’adresse : https://trouve-ton-artisan-react-js.vercel.app/
 
 ## 👨‍💻 Auteur
 Simon — Développeur web Fullstack
